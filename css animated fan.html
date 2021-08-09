@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+body{background:#001d30;
+text-align:center}
+.fandiv{
+width:200px;
+height:200px;
+margin:50px auto;
+border:2px solid #001d30;
+padding:10px;
+background:#fff;
+border:2px solid blue;
+border-radius:30px;
+}
+
+h3{
+background:#FAEBD7;
+padding:5px;
+border-radius:5px;
+color:blue
+}
+
+img{width:200px;
+height:200px;
+}
+
+.mystyle1{
+animation:rotate .1s linear infinite;
+}
+.mystyle2{
+animation:rotate .3s linear infinite;
+}
+.mystyle3{
+animation:rotate .6s linear infinite;
+}
+
+.mystyle4{
+animation:rotate .9s linear infinite;
+}
+
+
+@keyframes rotate{
+to{
+transform:rotate(360deg);
+}
+}
+
+
+@keyframes changebg{
+
+to{
+
+filter:hue-rotate(360deg)
+}
+
+}
+
+button{margin-left:10px;
+width:70px;
+height:40px;
+border:2px solid blue;
+border-radius:10px;
+cursor:pointer;
+outline:none;
+font-weight:bold;
+}
+
+
+
+button:active{background:rgba(0,0,0,0.5)}
+.speed:hover{
+background:#9400D3
+
+}
+.startBtn{background:green;
+font-size:22px;
+color:#fff}
+
+.offBtn{background:red;
+font-size:25px;
+color:#fff}
+
+
+
+.light{width:20px;
+height:20px;
+background:#51eeee;
+box-shadow:0 0 25px #51eeee,0 0 50px #51eeee,0 0 70px #51eeee;
+margin:0 auto;
+border-radius:50%;
+
+}
+.mystylelight{
+animation:changebg .5s linear infinite;
+}
+@keyframes changebg{
+
+to{
+
+filter:hue-rotate(360deg)
+}
+
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="fandiv">
+<img id="img" src="fanicon.png">
+<div id="light" class="light"></div>
+</div>
+
+<h3>Click the button to use fan.</h3>
+
+<button class="startBtn" onclick="btn1()">Start</button>
+<button class="offBtn" onclick="offBtn()">Off</button><br><br>
+<button class="speed" onclick="btn2()">Speed 2</button>
+<button class="speed" onclick="btn3()">Speed 3</button>
+<button class="speed" onclick="btn4()">Speed 4</button>
+
+<script type="text/javascript">
+
+var img = document.getElementById('img');
+var light = document.getElementById('light');
+function btn1(){
+
+img.classList.add("mystyle1");
+light.classList.add("mystylelight");
+}
+
+function btn2(){
+light.classList.add("mystylelight");
+img.classList.add("mystyle2")
+}
+
+function btn3(){
+light.classList.add("mystylelight");
+img.classList.add("mystyle3")
+}
+
+function btn4(){
+light.classList.add("mystylelight");
+img.classList.add("mystyle4")
+}
+
+
+
+function offBtn(){
+img.classList.remove("mystyle1");
+img.classList.remove("mystyle2");
+img.classList.remove("mystyle3");
+img.classList.remove("mystyle4");
+light.classList.remove("mystylelight");
+}
+
+
+</script>
+</body>
+</html>
